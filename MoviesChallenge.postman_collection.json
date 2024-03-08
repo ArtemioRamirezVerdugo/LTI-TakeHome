@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "47817631-924b-48dd-ac56-adde2ced2e69",
+		"name": "MoviesChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33466185"
+	},
+	"item": [
+		{
+			"name": "getAllMovies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": "http://localhost:8081/api/v1/movies"
+			},
+			"response": []
+		},
+		{
+			"name": "updateMovie",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/movies?id=1&downvotes=0&imageUrl=someUrl&favoriteCount=0&releaseYear=2020&score=2&title=some%20movie&upvotes=2&details=updated%20details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "downvotes",
+							"value": "0"
+						},
+						{
+							"key": "imageUrl",
+							"value": "someUrl"
+						},
+						{
+							"key": "favoriteCount",
+							"value": "0"
+						},
+						{
+							"key": "releaseYear",
+							"value": "2020"
+						},
+						{
+							"key": "score",
+							"value": "2"
+						},
+						{
+							"key": "title",
+							"value": "some%20movie"
+						},
+						{
+							"key": "upvotes",
+							"value": "2"
+						},
+						{
+							"key": "details",
+							"value": "updated%20details"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertMovie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/movies?imageUrl=urlOfTheImage&releaseYear=2020&title=movie%20from%202020&details=details%20of%20a%20movie%20from%202020",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "imageUrl",
+							"value": "urlOfTheImage"
+						},
+						{
+							"key": "releaseYear",
+							"value": "2020"
+						},
+						{
+							"key": "title",
+							"value": "movie%20from%202020"
+						},
+						{
+							"key": "details",
+							"value": "details%20of%20a%20movie%20from%202020"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upsertVote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/movies/vote?userId=1&movieId=1&vote=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"vote"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "movieId",
+							"value": "1"
+						},
+						{
+							"key": "vote",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteVote",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/movies/vote?userId=1&movieId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"vote"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "movieId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertFavorite",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/movies/favorite?userId=1&movieId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"favorite"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "movieId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteFavorite",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/movies/favorite?userId=1&movieId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"favorite"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "movieId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMovieById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": "http://localhost:8081/api/v1/movies/1"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMovie",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": "http://localhost:8081/api/v1/movies/4"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMoviesGroupedByYear",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": "http://localhost:8081/api/v1/movies/movies-by-year"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMoviesOfYear",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": "http://localhost:8081/api/v1/movies/movies-by-year/2020"
+			},
+			"response": []
+		}
+	]
+}
